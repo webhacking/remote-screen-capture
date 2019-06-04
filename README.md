@@ -1,5 +1,10 @@
 ## Remote Screen Capture
 > Capture screenshots from url.
+<p align="left">
+<a href="https://travis-ci.org/webhacking/remote-screen-capture"><img src="https://travis-ci.org/webhacking/remote-screen-capture.svg?branch=master" alt="Build Status"></a>
+<a href="https://codecov.io/gh/webhacking/remote-screen-capture"><img src="https://codecov.io/gh/webhacking/remote-screen-capture/branch/master/graph/badge.svg" /></a>
+</p>
+
 
 It uses [Selenium](https://www.seleniumhq.org/)(Chrome) under the hood.
 
