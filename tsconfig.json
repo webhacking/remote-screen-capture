@@ -3,12 +3,13 @@
     "baseUrl": ".",
     "module": "es2015",
     "moduleResolution": "node",
-    "target": "es5",
+    "target": "es6",
     "declaration": true,
     "outDir": "./dist",
     "skipLibCheck": true,
     "removeComments": true,
     "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
     "typeRoots": [
       "node_modules/@types"
     ]
