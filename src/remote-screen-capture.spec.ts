@@ -1,4 +1,4 @@
-import RemoteScreenCapture from './remote-screen-capture';
+import {RemoteScreenCapture} from './remote-screen-capture';
 import {Observable} from 'rxjs/internal/Observable';
 
 describe('Testing extended expect', () => {

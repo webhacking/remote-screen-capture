@@ -5,7 +5,7 @@ import {ThenableWebDriver, Builder, Capabilities} from 'selenium-webdriver';
 import {from, of, Observable} from 'rxjs';
 import {concatMap, map, tap} from 'rxjs/operators';
 
-export default class RemoteScreenCapture {
+export class RemoteScreenCapture {
   public getDriver(): Observable<ThenableWebDriver> {
     chrome.setDefaultService(new chrome.ServiceBuilder(chromeDriver.path).build());
     return of(new Builder()

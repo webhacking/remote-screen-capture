@@ -31,5 +31,5 @@ var RemoteScreenCapture = (function () {
     };
     return RemoteScreenCapture;
 }());
-exports.default = RemoteScreenCapture;
+exports.RemoteScreenCapture = RemoteScreenCapture;
 //# sourceMappingURL=remote-screen-capture.js.map
