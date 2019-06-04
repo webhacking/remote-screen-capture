@@ -9,15 +9,23 @@
 It uses [Selenium](https://www.seleniumhq.org/)(Chrome) under the hood.
 
 ## Install
+Using npm:
 ```
 npm install remote-screen-capture
 ```
 
+Using yarn:
+```
+yarn add remote-screen-capture
+```
+
 ## Usage
+> *NOTE:* If you using ES6+ just import statements
 
 Promise-based:
 ```javascript
-import RemoteScreenCapture from 'remote-screen-capture';
+// Or 
+const RemoteScreenCapture = require('remote-screen-capture').RemoteScreenCapture;
 
 // If you want to encoded data
 RemoteScreenCapture.take('https://www.google.com').toPromise().then(chunks => {
@@ -35,7 +43,7 @@ const saveFilePath = await RemoteScreenCapture.take('https://www.google.com', '.
 
 Observable-based:
 ```javascript
-import RemoteScreenCapture from 'remote-screen-capture';
+const RemoteScreenCapture = require('remote-screen-capture').RemoteScreenCapture;
 
 // If you want to encoded data
 RemoteScreenCapture.take('https://www.google.com').subscribe(chunks => {

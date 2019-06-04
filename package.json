@@ -5,6 +5,14 @@
   "description": "Capture screenshots using selenium",
   "main": "./dist/index.js",
   "types": "./dist/index.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webhacking/remote-screen-capture.git"
+  },
+  "bugs": {
+    "url": "https:/github.com/webhacking/remote-screen-capture/issues"
+  },
+  "homepage": "https:/github.com/webhacking/remote-screen-capture",
   "scripts": {
     "format": "./node_modules/.bin/prettier --write \"**/*.ts\"",
     "test": "./node_modules/.bin/jest --testPathIgnorePatterns dist",
@@ -17,7 +25,8 @@
     "remote",
     "screen-capture",
     "capture-from-url",
-    "screenshot"
+    "screenshot",
+    "node"
   ],
   "license": "ISC",
   "dependencies": {
