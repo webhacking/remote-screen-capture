@@ -1,0 +1,56 @@
+{
+  "name": "remote-screen-capture",
+  "version": "1.0.0",
+  "author": "Hax0r <a@hax0r.info>",
+  "description": "Capture screenshots using selenium",
+  "main": "dist/index.js",
+  "scripts": {
+    "format": "./node_modules/.bin/prettier --write \"**/*.ts\"",
+    "test": "./node_modules/.bin/jest --testPathIgnorePatterns dist",
+    "coverage": "./node_modules/.bin/jest --coverage --testPathIgnorePatterns dist",
+    "post-coverage": "./node_modules/.bin/nyc report --reporter=json > coverage/coverage.json",
+    "build": "./node_modules/.bin/tsc"
+  },
+  "keywords": [
+    "capture",
+    "remote",
+    "screen-capture",
+    "capture-from-url"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "chromedriver": "74.0.0",
+    "rxjs": "^6.5.1",
+    "selenium-webdriver": "^4.0.0-alpha.1",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.5"
+  },
+  "devDependencies": {
+    "@types/chromedriver": "^2.38.0",
+    "@types/jest": "^24.0.13",
+    "@types/selenium-webdriver": "^4.0.0",
+    "codecov": "^3.5.0",
+    "jest": "24.8.0",
+    "nyc": "^14.1.1",
+    "prettier": "1.17.0",
+    "ts-jest": "24.0.0",
+    "tslint": "5.17.0",
+    "tslint-config-prettier": "1.18.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "\\.spec\\.ts$",
+    "collectCoverage": true,
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "globals": {
+      "ts-jest": {
+        "enableTsDiagnostics": true
+      }
+    }
+  }
+}
