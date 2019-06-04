@@ -1,9 +1,8 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
     "module": "commonjs",
     "moduleResolution": "node",
-    "target": "es6",
+    "target": "es5",
     "declaration": true,
     "outDir": "./dist",
     "skipLibCheck": true,
@@ -12,7 +11,8 @@
     "allowSyntheticDefaultImports": true,
     "typeRoots": [
       "node_modules/@types"
-    ]
+    ],
+    "strict": true
   },
   "include": [
     "src/**/*"

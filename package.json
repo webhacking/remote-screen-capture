@@ -24,8 +24,7 @@
     "chromedriver": "74.0.0",
     "rxjs": "^6.5.1",
     "selenium-webdriver": "^4.0.0-alpha.1",
-    "ts-node": "^8.1.0",
-    "typescript": "^3.4.5"
+    "ts-node": "^8.1.0"
   },
   "devDependencies": {
     "@types/chromedriver": "^2.38.0",
@@ -37,7 +36,8 @@
     "prettier": "1.17.0",
     "ts-jest": "24.0.0",
     "tslint": "5.17.0",
-    "tslint-config-prettier": "1.18.0"
+    "tslint-config-prettier": "1.18.0",
+    "typescript": "^3.5.1"
   },
   "jest": {
     "transform": {
