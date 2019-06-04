@@ -3,8 +3,8 @@
   "version": "1.0.6",
   "author": "Hax0r <a@hax0r.info>",
   "description": "Capture screenshots using selenium",
-  "main": "dist/remote-screen-capture.js",
-  "types": "dist/remote-screen-capture.d.ts",
+  "main": "./dist/remote-screen-capture.js",
+  "types": "./dist/remote-screen-capture.d.ts",
   "scripts": {
     "format": "./node_modules/.bin/prettier --write \"**/*.ts\"",
     "test": "./node_modules/.bin/jest --testPathIgnorePatterns dist",
