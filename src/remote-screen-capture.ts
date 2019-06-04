@@ -11,8 +11,7 @@ export class RemoteScreenCapture {
     return of(new Builder()
       .withCapabilities(Capabilities.chrome())
       .setChromeOptions(
-        new chrome.Options()
-          .addExtensions()
+        new chrome.Options().headless().addExtensions()
       )
       .build());
   }
