@@ -9,11 +9,16 @@ export class RemoteScreenCapture {
   public getDriver(): Observable<ThenableWebDriver> {
     chrome.setDefaultService(new chrome.ServiceBuilder(chromeDriver.path).build());
     return of(new Builder()
-      .withCapabilities(Capabilities.chrome())
+      .withCapabilities(Capabilities.chrome().set('chromeOptions', {
+        args: [
+          `--window-size=2880,1800`
+        ]
+      }))
       .setChromeOptions(
         new chrome.Options().headless().addExtensions()
       )
-      .build());
+      .build()
+    );
   }
 
   public static take(URI: string, savePath?: string): Observable<string | void> {

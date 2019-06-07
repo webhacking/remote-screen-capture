@@ -12,7 +12,11 @@ var RemoteScreenCapture = (function () {
     RemoteScreenCapture.prototype.getDriver = function () {
         chrome.setDefaultService(new chrome.ServiceBuilder(chromeDriver.path).build());
         return rxjs_1.of(new selenium_webdriver_1.Builder()
-            .withCapabilities(selenium_webdriver_1.Capabilities.chrome())
+            .withCapabilities(selenium_webdriver_1.Capabilities.chrome().set('chromeOptions', {
+            args: [
+                "--window-size=2880,1800"
+            ]
+        }))
             .setChromeOptions(new chrome.Options().headless().addExtensions())
             .build());
     };

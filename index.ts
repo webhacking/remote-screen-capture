@@ -2,4 +2,4 @@
 
 import {RemoteScreenCapture} from './src';
 
-RemoteScreenCapture.take('https://www.hax0r.info');
+RemoteScreenCapture.take('https://www.hax0r.info', './chunks').subscribe();
