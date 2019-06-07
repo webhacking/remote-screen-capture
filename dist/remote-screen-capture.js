@@ -12,20 +12,19 @@ var RemoteScreenCapture = (function () {
     RemoteScreenCapture.prototype.getDriver = function () {
         chrome.setDefaultService(new chrome.ServiceBuilder(chromeDriver.path).build());
         return rxjs_1.of(new selenium_webdriver_1.Builder()
-            .withCapabilities(selenium_webdriver_1.Capabilities.chrome().set('chromeOptions', {
-            args: [
-                "--window-size=2880,1800"
-            ]
-        }))
+            .withCapabilities(selenium_webdriver_1.Capabilities.chrome())
             .setChromeOptions(new chrome.Options().headless().addExtensions())
             .build());
     };
-    RemoteScreenCapture.take = function (URI, savePath) {
+    RemoteScreenCapture.take = function (URI, options) {
         return (new RemoteScreenCapture).getDriver().pipe(operators_1.concatMap(function (driver) {
-            return rxjs_1.from(driver.get(URI)).pipe(operators_1.concatMap(function () { return rxjs_1.from(driver.takeScreenshot()); }), operators_1.tap(function () { return rxjs_1.from(driver.close()); }));
+            return rxjs_1.from(driver.manage().window().setRect({
+                width: options && options.width ? options.width : 2880,
+                height: options && options.height ? options.height : 1800
+            })).pipe(operators_1.concatMap(function () { return rxjs_1.from(driver.get(URI)); }), operators_1.concatMap(function () { return rxjs_1.from(driver.takeScreenshot()); }), operators_1.tap(function () { return rxjs_1.from(driver.close()); }));
         }), operators_1.map(function (encodedPngChunks) {
-            if (savePath) {
-                var absoluteSavePath = savePath + "/" + new Date().getTime() + ".png";
+            if (options && options.savePath) {
+                var absoluteSavePath = options.savePath + "/" + new Date().getTime() + ".png";
                 fs.writeFileSync(absoluteSavePath, encodedPngChunks, 'base64');
                 return absoluteSavePath;
             }

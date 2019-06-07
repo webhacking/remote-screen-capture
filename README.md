@@ -57,7 +57,8 @@ RemoteScreenCapture.take('https://www.google.com', './images').subscribe(savePat
 ```
 
 ## API
-- take(URI: string, savePath?: string)
+- take(URI: string, options?: OptionsInterface)
+	- options(width:number = 2880, height:number = 1800, savePath?: string)
 
 ## Where do I go for help?
 If you need, open an issue.
