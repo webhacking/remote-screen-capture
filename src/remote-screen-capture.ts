@@ -12,7 +12,7 @@ export class RemoteScreenCapture {
     return of(new Builder()
       .withCapabilities(Capabilities.chrome())
       .setChromeOptions(
-        new chrome.Options().headless().addExtensions()
+        new chrome.Options().headless().addExtensions().addArguments('--no-sandbox').addArguments('--disable-dev-shm-usage')
       )
       .build()
     );
