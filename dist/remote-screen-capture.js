@@ -13,7 +13,11 @@ var RemoteScreenCapture = (function () {
         chrome.setDefaultService(new chrome.ServiceBuilder(chromeDriver.path).build());
         return rxjs_1.of(new selenium_webdriver_1.Builder()
             .withCapabilities(selenium_webdriver_1.Capabilities.chrome())
+<<<<<<< HEAD
             .setChromeOptions(new chrome.Options().headless().addExtensions().addExtensions('--kiosk'))
+=======
+            .setChromeOptions(new chrome.Options().headless().addExtensions().addArguments('--no-sandbox').addArguments('--disable-dev-shm-usage'))
+>>>>>>> ee9a337dede61c805d045b2a04a7e23f34878f30
             .build());
     };
     RemoteScreenCapture.take = function (URI, options) {
