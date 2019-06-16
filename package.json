@@ -1,6 +1,6 @@
 {
   "name": "remote-screen-capture",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "author": "Hax0r <a@hax0r.info>",
   "description": "Capture screenshots using selenium",
   "main": "./dist/index.js",
