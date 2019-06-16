@@ -7,19 +7,19 @@ import {concatMap, map, tap} from 'rxjs/operators';
 import {OptionsInterface} from './interface/options.interface';
 
 export class RemoteScreenCapture {
-  public getDriver(): Observable<ThenableWebDriver> {
+  private getDriver(): Observable<ThenableWebDriver> {
     chrome.setDefaultService(new chrome.ServiceBuilder(chromeDriver.path).build());
     return of(new Builder()
       .withCapabilities(Capabilities.chrome())
       .setChromeOptions(
-        new chrome.Options().headless().addExtensions()
+        new chrome.Options().headless().addExtensions().addExtensions('--kiosk')
       )
       .build()
     );
   }
 
-  public static take(URI: string, options?: OptionsInterface): Observable<string | void> {
-    return (new RemoteScreenCapture).getDriver().pipe(
+  public static take(URI: string, options?: OptionsInterface): Observable<string> {
+    return (new RemoteScreenCapture()).getDriver().pipe(
       concatMap((driver: ThenableWebDriver) => {
         return from(driver.manage().window().setRect({
           width: options && options.width ? options.width : 2880,
@@ -28,7 +28,7 @@ export class RemoteScreenCapture {
           concatMap(() => from(driver.get(URI))),
           concatMap(() => from(driver.takeScreenshot())),
           tap(() => from(driver.close()))
-        )
+        );
       }),
       map((encodedPngChunks) => {
         if (options && options.savePath) {

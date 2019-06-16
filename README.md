@@ -3,6 +3,7 @@
 <p align="left">
 <a href="https://travis-ci.org/webhacking/remote-screen-capture"><img src="https://travis-ci.org/webhacking/remote-screen-capture.svg?branch=master" alt="Build Status"></a>
 <a href="https://codecov.io/gh/webhacking/remote-screen-capture"><img src="https://codecov.io/gh/webhacking/remote-screen-capture/branch/master/graph/badge.svg" /></a>
+<a href="https://badge.fury.io/js/remote-screen-capture"><img src="https://badge.fury.io/js/remote-screen-capture.svg" alt="npm version" height="18"></a>
 </p>
 
 
@@ -59,6 +60,9 @@ RemoteScreenCapture.take('https://www.google.com', './images').subscribe(savePat
 ## API
 - take(URI: string, options?: OptionsInterface)
 	- options(width:number = 2880, height:number = 1800, savePath?: string)
+- takeByElementSelector(URI: string, selectorName: string, options?: OptionsInterface)
+	- options(width:number = 2880, height:number = 1800, savePath?: string)
+
 
 ## Where do I go for help?
 If you need, open an issue.

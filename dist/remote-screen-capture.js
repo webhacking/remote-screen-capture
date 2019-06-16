@@ -13,11 +13,11 @@ var RemoteScreenCapture = (function () {
         chrome.setDefaultService(new chrome.ServiceBuilder(chromeDriver.path).build());
         return rxjs_1.of(new selenium_webdriver_1.Builder()
             .withCapabilities(selenium_webdriver_1.Capabilities.chrome())
-            .setChromeOptions(new chrome.Options().headless().addExtensions())
+            .setChromeOptions(new chrome.Options().headless().addExtensions().addExtensions('--kiosk'))
             .build());
     };
     RemoteScreenCapture.take = function (URI, options) {
-        return (new RemoteScreenCapture).getDriver().pipe(operators_1.concatMap(function (driver) {
+        return (new RemoteScreenCapture()).getDriver().pipe(operators_1.concatMap(function (driver) {
             return rxjs_1.from(driver.manage().window().setRect({
                 width: options && options.width ? options.width : 2880,
                 height: options && options.height ? options.height : 1800
