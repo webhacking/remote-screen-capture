@@ -43,7 +43,7 @@
     "@types/selenium-webdriver": "4.0.0",
     "@types/sharp": "^0.22.2",
     "codecov": "3.5.0",
-    "jest": "24.8.0",
+    "jest": "24.9.0",
     "nyc": "14.1.1",
     "prettier": "1.18.0",
     "ts-jest": "24.0.2",
