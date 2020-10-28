@@ -33,7 +33,7 @@
     "chromedriver": "74.0.0",
     "rxjs": "^6.5.1",
     "selenium-webdriver": "4.0.0-alpha.1",
-    "ts-node": "^8.1.0"
+    "ts-node": "^9.0.0"
   },
   "devDependencies": {
     "@types/chromedriver": "2.38.0",
